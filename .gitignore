@@ -15,3 +15,8 @@ node_modules
 /coverage.json
 
 addresses/
+
+**/*.key
+**/*.keys
+**/*.address
+**/*.addresses
