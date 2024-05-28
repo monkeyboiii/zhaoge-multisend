@@ -20,3 +20,6 @@ addresses/
 **/*.keys
 **/*.address
 **/*.addresses
+
+phrases/
+phrase.*
