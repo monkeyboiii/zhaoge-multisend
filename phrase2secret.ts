@@ -29,7 +29,7 @@ async function main() {
 3. 从命令行读入（单个）
 4. 从命令行读入（连续）
 5. 退出
-[1/2/3/*]: `);
+[1/2/3/4/*5*]: `);
   let writeDir = "./private.keys";
 
   //
