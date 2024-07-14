@@ -56,9 +56,13 @@ async function main() {
 
     let directory = await askQuestion("请输入文件路径：（默认是./phrase.txt）: ");
     directory = directory ? directory.trim() : "./phrase.txt";
-    const mnemonic = fs.readFileSync(directory, "utf-8");
-    const walletMnemonic = Wallet.fromPhrase(mnemonic.trim());
-    privateKeys.push(walletMnemonic.privateKey);
+    const mnemonics = fs.readFileSync(directory, "utf-8");
+    mnemonics.split(/\r?\n/).forEach((mnemonic) => {
+      if (mnemonic.length > 0) {
+        const walletMnemonic = Wallet.fromPhrase(mnemonic.trim());
+        privateKeys.push(walletMnemonic.privateKey);
+      }
+    });
   } else if (ans.trim().toLowerCase() == "3") {
     // NOTE:
     // 单次，12个词语粘贴进入
